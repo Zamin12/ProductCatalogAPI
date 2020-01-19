@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,20 @@ namespace ProductCatalogAPI.Controllers
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             return await _context.Products.ToListAsync();
+        }
+
+
+        [HttpGet("Filter")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByFilter(string code = "", string name = "", decimal startPrice = 0, decimal endPrice = 0)
+        {
+            var productsQuery = _context.Products.AsQueryable();
+
+            if (!string.IsNullOrEmpty(code)) productsQuery = productsQuery.Where(p => p.Code == code);
+            if (!string.IsNullOrEmpty(name)) productsQuery = productsQuery.Where(p => p.Name == name);
+            if (startPrice > 0) productsQuery = productsQuery.Where(p => p.Price >= startPrice);
+            if (endPrice > 0) productsQuery = productsQuery.Where(p => p.Price <= endPrice);
+
+            return await productsQuery.ToListAsync();
         }
 
         // GET: api/v1/Products/5
