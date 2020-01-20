@@ -29,7 +29,7 @@ namespace ProductCatalogAPI.Controllers
             return await _context.Products.ToListAsync();
         }
 
-
+        // GET: api/v1/Products/Filter?code=code&name=name&startPrice=1&endPrice=100
         [HttpGet("Filter")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByFilter(string code = "", string name = "", decimal startPrice = 0, decimal endPrice = 0)
         {
