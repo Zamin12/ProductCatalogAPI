@@ -8,22 +8,20 @@ Example illustration taken from microsoft documentation:
 
 ## Getting Started
 
-This service will expose information about product catalog entities with RESTFul service.
-It provides you add, edit, remove, view and filter endpoints.
+This service exposes information about product catalog entities with RESTFul service.
+It provides add, edit, remove, view and filter endpoints.
 
 Features: 
-* Used ASP.NET Core framework.
+* ASP.NET Core framework.
 * API Support for versioning.
-* Endpoins implemented in asynchronously.
-* Added unit test for controller.
-* Photo data are implemented recieving, sending and saving as base64 string. (nvarchar(max))
-
-P.S: As there is only table without any additional complex behaviors decided to use CRUD logic and put it same place with endpoints in controller.
-
+* Asynchronous endpoins.
+* Unit tests for controller.
+* Photo data is implemented as base64 string.
+* Additional controller for System information and status
 
 ## Technologies
 
-Project is created with frameworks and packages:
+Frameworks and packages:
 
 * ASP.NET Core: 3.0
 * Entity Framework Core and related: 3.1.1
@@ -31,19 +29,19 @@ Project is created with frameworks and packages:
 * Swashbuckle.AspNetCore: 5.0.0
 * AspNetCore.Mvc.Versioning.ApiExplorer: 4.0.0
 
-Tools: 
-
-* Visual Studio Professional: 16.3.9
-* Microsoft SQL Server: 14.0 (SQLEXPRESS)
-
-For Test project: 
+Test project frameworks and packages: 
 
 * Microsoft.NET.Test.SDK: 16.4.0
 * Microsoft.EntityFrameworkCore.InMemory: 3.1.1
 * xunit: 2.4.1
 * xunit.runner.visualstudio: 2.4.1
 
-### Prerequisites
+Tools: 
+
+* Visual Studio Professional: 16.3.9
+* Microsoft SQL Server: 14.0 (SQLEXPRESS)
+
+## Prerequisites
 
 As configuration you will need clarify and change connection string in '''appsettings.json''' and '''appsettings.Development.json''' files. 
 There must not be database with same name as in configuration. It will be created with migrations on first startup of solution.
@@ -58,7 +56,7 @@ There must not be database with same name as in configuration. It will be create
 
 ```
 
-Also it is possible to change Urls and ports for solution on different profiles. 
+Also it is possible to change Urls and ports for different profiles in ```Properties\launchsettings.json``` 
 
 ```
 {
@@ -95,7 +93,3 @@ Also it is possible to change Urls and ports for solution on different profiles.
 ## Authors
 
 * **Zamin Ismayilov**
-
-## Acknowledgments
-
-* 
