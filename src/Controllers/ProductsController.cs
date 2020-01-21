@@ -45,6 +45,7 @@ namespace ProductCatalogAPI.Controllers
 
         // GET: api/v1/Products/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Product>> GetProduct(Guid id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -94,7 +95,7 @@ namespace ProductCatalogAPI.Controllers
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetProduct), new { id = product.Id, version = HttpContext.GetRequestedApiVersion().ToString() }, product);
+            return CreatedAtAction(nameof(GetProduct), new { id = product.Id, version = HttpContext?.GetRequestedApiVersion().ToString() }, product);
         }
 
         // DELETE: api/v1/Products/5
