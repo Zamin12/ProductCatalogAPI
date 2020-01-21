@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <Authors>Zamin Ismayilov</Authors>
-    <Description>Test project for job application</Description>
+    <Description>RESTful service for Managing product catalog solution</Description>
   </PropertyGroup>
 
   <ItemGroup>
