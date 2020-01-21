@@ -1,7 +1,9 @@
 ## Product Catalog API
   
 RESTful service for Managing product catalog solution.
-It was designed as Simple data-driven CRUD microservice. 
+It was designed as Simple data-driven CRUD microservice.
+
+Example illustration taken from microsoft documentation: 
 ![Simple data-driven CRUD microservice](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/media/data-driven-crud-microservice/simple-data-driven-crud-microservice.png)
 
 ## Getting Started
