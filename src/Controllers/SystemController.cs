@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
+using Newtonsoft.Json;
 using ProductCatalogAPI.Model;
 
 namespace ProductCatalogAPI.Controllers
@@ -30,9 +27,9 @@ namespace ProductCatalogAPI.Controllers
         // Get system info
         // GET: api/System
         [HttpGet]
-        public ActionResult<object> GetSystemInfo()
+        public ActionResult<string> GetSystemInfo()
         {
-            return new
+            var info = new
             {
                 Version = FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion,
                 ServerTime = DateTime.Now,
@@ -41,6 +38,8 @@ namespace ProductCatalogAPI.Controllers
                 _environment.EnvironmentName,
                 _dbContext.Database.ProviderName
             };
+
+            return JsonConvert.SerializeObject(info, Formatting.Indented);
         }
 
         // Get status of API
@@ -70,12 +69,6 @@ namespace ProductCatalogAPI.Controllers
 
     }
 
-    /// <summary>
-    /// Not exactly what we need to check the connection to database, but if we attempt to 
-    /// check the database exists or not then we can check the connection as well by wrapping the calling 
-    /// code in try..catch. Any alternative ideas are more than welcome to replace this code :-)
-    /// https://stackoverflow.com/questions/46285479/how-to-check-connection-to-database-in-entity-framework-core
-    /// </summary>
     public static class DatabaseFacadeExtensions
     {
         public static bool Exists(this DatabaseFacade source)
