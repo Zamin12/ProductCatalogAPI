@@ -11,6 +11,16 @@ Example illustration taken from microsoft documentation:
 This service will expose information about product catalog entities with RESTFul service.
 It provides you add, edit, remove, view and filter endpoints.
 
+Features: 
+* Used ASP.NET Core framework.
+* API Support for versioning.
+* Endpoins implemented in asynchronously.
+* Added unit test for controller.
+* Photo data are implemented recieving, sending and saving as base64 string. (nvarchar(max))
+
+P.S: As there is only table without any additional complex behaviors decided to use CRUD logic and put it same place with endpoints in controller.
+
+
 ## Technologies
 
 Project is created with frameworks and packages:
