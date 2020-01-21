@@ -43,7 +43,7 @@ Tools:
 
 ## Prerequisites
 
-As configuration you will need clarify and change connection string in '''appsettings.json''' and '''appsettings.Development.json''' files. 
+As configuration you will need clarify and change connection string in ```appsettings.json``` and ```appsettings.Development.json``` files. 
 There must not be database with same name as in configuration. It will be created with migrations on first startup of solution.
 
 ```
