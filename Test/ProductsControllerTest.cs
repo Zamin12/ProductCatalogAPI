@@ -60,8 +60,7 @@ namespace Test
                 Code = "code",
                 Name = "Shoes",
                 Price = 111m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             dbContext.Add(product);
@@ -92,8 +91,7 @@ namespace Test
                 Code = "code",
                 Name = "Shoes",
                 Price = 111m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             dbContext.Add(product);
@@ -127,8 +125,7 @@ namespace Test
                 Code = "code",
                 Name = initialName,
                 Price = 111m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             dbContext.Add(product);
@@ -159,8 +156,7 @@ namespace Test
                 Code = "code",
                 Name = "Glasses",
                 Price = 111m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             var controller = new ProductsController(dbContext);
@@ -190,8 +186,7 @@ namespace Test
                 Code = "code",
                 Name = "Glasses",
                 Price = 111m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             dbContext.Add(product);

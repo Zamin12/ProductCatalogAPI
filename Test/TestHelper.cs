@@ -26,8 +26,7 @@ namespace Test
                 Code = "1",
                 Name = "Jeans",
                 Price = 15.34m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             var product2 = new Product
@@ -36,8 +35,7 @@ namespace Test
                 Code = "2",
                 Name = "Tshirt",
                 Price = 124.55m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             var product3 = new Product
@@ -46,8 +44,7 @@ namespace Test
                 Code = "3",
                 Name = "Jacket",
                 Price = 2567.55m,
-                Photo = "testphotobase64string",
-                LastUpdated = DateTime.Now
+                Photo = "testphotobase64string"
             };
 
             dbContext.Add(product1);
