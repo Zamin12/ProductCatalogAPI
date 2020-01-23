@@ -26,7 +26,7 @@ namespace ProductCatalogAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.OrderByDescending(p => p.LastUpdated).ToListAsync();
         }
 
         // GET: api/v1/Products/Filter?code=code&name=name&startPrice=1&endPrice=100
@@ -41,7 +41,7 @@ namespace ProductCatalogAPI.Controllers
             if (startPrice > 0) productsQuery = productsQuery.Where(p => p.Price >= startPrice);
             if (endPrice > 0) productsQuery = productsQuery.Where(p => p.Price <= endPrice);
 
-            return await productsQuery.ToListAsync();
+            return await productsQuery.OrderByDescending(p => p.LastUpdated).ToListAsync();
         }
 
         // GET: api/v1/Products/5

@@ -14,6 +14,6 @@ namespace ProductCatalogAPI.Model
 
         public decimal Price { get; set; }
 
-        public DateTime LastUpdated { get; set; } = DateTime.Now;
+        public DateTime LastUpdated { get; } = DateTime.Now;
     }
 }
