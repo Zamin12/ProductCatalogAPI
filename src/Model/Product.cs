@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace ProductCatalogAPI.Model
 {
@@ -14,6 +15,7 @@ namespace ProductCatalogAPI.Model
 
         public decimal Price { get; set; }
 
+        [JsonIgnore]
         public DateTime LastUpdated { get; } = DateTime.Now;
     }
 }
