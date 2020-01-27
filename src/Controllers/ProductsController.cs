@@ -37,7 +37,7 @@ namespace ProductCatalogAPI.Controllers
             var productsQuery = _context.Products.AsQueryable();
 
             if (!string.IsNullOrEmpty(code)) productsQuery = productsQuery.Where(p => p.Code == code);
-            if (!string.IsNullOrEmpty(name)) productsQuery = productsQuery.Where(p => p.Name == name);
+            if (!string.IsNullOrEmpty(name)) productsQuery = productsQuery.Where(p => p.Name.Contains(name));
             if (startPrice > 0) productsQuery = productsQuery.Where(p => p.Price >= startPrice);
             if (endPrice > 0) productsQuery = productsQuery.Where(p => p.Price <= endPrice);
 
