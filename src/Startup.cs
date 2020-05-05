@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using ProductCatalogAPI.Controllers;
 using ProductCatalogAPI.Infrastructure;
 using ProductCatalogAPI.Model;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -21,7 +22,7 @@ namespace ProductCatalogAPI
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -67,7 +68,7 @@ namespace ProductCatalogAPI
                 }
             });
 
-            dbContext.Database.Migrate();
+            //dbContext.Database.Migrate();
 
             if (env.IsDevelopment())
             {
