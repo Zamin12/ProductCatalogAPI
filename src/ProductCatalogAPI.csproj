@@ -5,7 +5,7 @@
     <Authors>Zamin Ismayilov</Authors>
     <Description>RESTful service for Managing product catalog solution</Description>
     <UserSecretsId>50a2cb9a-dc7d-4399-8341-ea6ee8a57e75</UserSecretsId>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
