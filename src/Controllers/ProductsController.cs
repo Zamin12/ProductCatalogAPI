@@ -23,7 +23,7 @@ namespace ProductCatalogAPI.Controllers
 
         // GET: api/v1/Products
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             return await _context.Products.OrderByDescending(p => p.LastUpdated).ToListAsync();
@@ -31,7 +31,7 @@ namespace ProductCatalogAPI.Controllers
 
         // GET: api/v1/Products/Filter?code=code&name=name&startPrice=1&endPrice=100
         [HttpGet("Filter")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByFilter(string code = "", string name = "", decimal startPrice = 0, decimal endPrice = 0)
         {
             var productsQuery = _context.Products.AsQueryable();
@@ -46,7 +46,7 @@ namespace ProductCatalogAPI.Controllers
 
         // GET: api/v1/Products/5
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Product>> GetProduct(Guid id)
         {
@@ -95,7 +95,7 @@ namespace ProductCatalogAPI.Controllers
 
         // POST: api/v1/Products
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(Product),StatusCodes.Status201Created)]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
             _context.Products.Add(product);
